@@ -1,6 +1,8 @@
 import { useState, useRef } from "react"
-import Header from "./Header"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 
+import Header from "./Header"
+import { auth } from "../firebase"
 import { BODY_IMG } from "../utils/constants"
 import { checkValidData } from "../utils/validate"
 
@@ -26,8 +28,28 @@ function LogIn() {
 
         if (errorMessage !== null) {
             setError(errorMessage)
+            return
+        }
+
+        if (isLogIn) {
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    setError(null)
+                }).catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+            });          
         } else {
-            setError(null)
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log(user)
+                    setError(null)
+                }).catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+            });
         }
     }
 
