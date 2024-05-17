@@ -5,7 +5,7 @@ import LogIn from "./LogIn"
 
 function HomePage() {
     return (
-        <div className="bg-[url('./assets/netflix-bg.jpeg')]">
+        <div className="">
             <LogIn />
         </div>
     )
