@@ -1,6 +1,8 @@
-import React from "react"
+import { useNowPlaying } from "../hooks/useData"
 
 function Browse() {
+    useNowPlaying()
+
     return (
         <div>
             <h1></h1>

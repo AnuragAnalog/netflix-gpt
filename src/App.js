@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { Provider, useDispatch } from "react-redux"
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { onAuthStateChanged } from "firebase/auth"
 import { createBrowserRouter, Outlet, RouterProvider, useNavigate } from "react-router-dom";
 
 import Error from "./components/Error"
@@ -19,7 +19,6 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // const auth = getAuth()
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user
