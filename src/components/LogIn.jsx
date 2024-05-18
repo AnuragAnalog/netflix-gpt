@@ -1,14 +1,19 @@
 import { useState, useRef } from "react"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
 
 import Header from "./Header"
 import { auth } from "../firebase"
 import { BODY_IMG } from "../utils/constants"
 import { checkValidData } from "../utils/validate"
+import { addUser } from "../utils/userSlice"
 
 function LogIn() {
     const [isLogIn, setIsLogIn] = useState(true)
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const nameRef = useRef(null)
     const emailRef = useRef(null)
@@ -32,20 +37,31 @@ function LogIn() {
         }
 
         if (isLogIn) {
+            // Sign In with credentials and navigate to browse page if not error else show error
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
                     setError(null)
+                    navigate("/browse")
                 }).catch((error) => {
                     const errorMessage = error.message;
                     setError(errorMessage)
             });          
         } else {
+            // Sign Up with credentials and navigate to browse page if not error else show error
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user)
                     setError(null)
+
+                    // Update the user profile with the name and dispatch the user to the store
+                    updateProfile(user, { displayName: name }).then(() => {
+                        dispatch(addUser({ uid: user.uid, email: user.email, displayName: name }))
+                        navigate("/browse")
+                    }).catch((error) => {
+                        const errorMessage = error.message;
+                        setError(errorMessage)
+                    })
                 }).catch((error) => {
                     const errorMessage = error.message;
                     setError(errorMessage)

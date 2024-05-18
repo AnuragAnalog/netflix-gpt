@@ -12,6 +12,7 @@ This is a web based projecct, which integrates ChatGPT into a Netflix Clone App,
 - Firebase Setup
 - Deploy App to production
 - Auth with Firebase
+- Implemeting SignOut
 
 ## Layout
 

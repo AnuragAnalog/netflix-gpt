@@ -1,5 +1,7 @@
-import React from "react"
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { useEffect } from "react"
+import { Provider, useDispatch } from "react-redux"
+import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { createBrowserRouter, Outlet, RouterProvider, useNavigate } from "react-router-dom";
 
 import Error from "./components/Error"
 import HomePage from "./components/HomePage";
@@ -8,20 +10,41 @@ import Footer from "./components/Footer"
 import Body from "./components/Body"
 import Browse from "./components/Browse"
 import LogIn from "./components/LogIn"
+import appStore from "./utils/appStore"
+import { addUser, removeUser } from "./utils/userSlice"
 
 function App() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const auth = getAuth()
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
+        // navigate("/browse")
+      } else {
+        dispatch(removeUser())
+        // navigate("/")
+      }
+    })
+  }, [])
+
   return (
-    <div className="flex flex-col gap-2">
-      <Header />
-      <Outlet />
-      {/* <Footer /> */}
-    </div>
+      <div className="flex flex-col gap-2">
+        <Header />
+        <Outlet />
+        {/* <Footer /> */}
+      </div>
   );
 }
 
 function AppRouter() {
   return (
-    <RouterProvider router={appRouter} />
+    <Provider store={appStore}>
+      <RouterProvider router={appRouter} />
+    </Provider>
   )
 }
 
