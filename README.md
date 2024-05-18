@@ -3,10 +3,15 @@
 This is a web based projecct, which integrates ChatGPT into a Netflix Clone App, for better movie recommendations.
 
 [x] Started the project with Create React App.
+
 [x] Installed Tailwind CSS for styling
+
 [x] Header
+
 [x] Login/Sign Up Page
+
 [x] Routing of the App
+
 [x] Form Validation
 [x] useRef Hook
 [x] Firebase Setup
