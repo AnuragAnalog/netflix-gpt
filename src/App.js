@@ -7,7 +7,6 @@ import Error from "./components/Error"
 import HomePage from "./components/HomePage";
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Body from "./components/Body"
 import Browse from "./components/Browse"
 import LogIn from "./components/LogIn"
 import appStore from "./utils/appStore"

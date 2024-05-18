@@ -7,7 +7,10 @@ export const BODY_IMG = "https://assets.nflxext.com/ffe/siteui/vlv3/41c789f0-7df
 // TMDB API URL
 
 // Now Playing Movies
-export const NOW_PLAYING_URL = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+export const NOW_PLAYING_URL = 'https://api.themoviedb.org/3/movie/now_playing?page=1'
+
+// Video URL
+export const VIDEO_URL = "https://api.themoviedb.org/3/movie/{movie_id}/videos"
 
 // TMDB API Options
 export const API_OPTIONS = {
