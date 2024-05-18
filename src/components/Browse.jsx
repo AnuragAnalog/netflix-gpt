@@ -3,7 +3,7 @@ import React from "react"
 function Browse() {
     return (
         <div>
-            <h1>Browse</h1>
+            <h1></h1>
         </div>
     )
 }

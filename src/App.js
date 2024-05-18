@@ -11,6 +11,7 @@ import Body from "./components/Body"
 import Browse from "./components/Browse"
 import LogIn from "./components/LogIn"
 import appStore from "./utils/appStore"
+import { auth } from "./firebase"
 import { addUser, removeUser } from "./utils/userSlice"
 
 function App() {
@@ -18,17 +19,19 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const auth = getAuth()
-    onAuthStateChanged(auth, (user) => {
+    // const auth = getAuth()
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
-        // navigate("/browse")
+        navigate("/browse")
       } else {
         dispatch(removeUser())
-        // navigate("/")
+        navigate("/")
       }
     })
+
+    return () => unsubscribe()
   }, [])
 
   return (
