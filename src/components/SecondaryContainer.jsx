@@ -7,8 +7,9 @@ function SecondaryContainer() {
     const nowplaying = useSelector((state) => state.movies?.nowPlayingMovies)
     const popular = useSelector((state) => state.movies?.popularMovies)
     const upcoming = useSelector((state) => state.movies?.upComingMovies)
+    const topRated = useSelector((state) => state.movies?.topRatedMovies)
 
-    if (!nowplaying || !popular || !upcoming) {
+    if (!nowplaying || !popular || !upcoming || !topRated) {
         return <div>Loading...</div>
     }
 
@@ -18,7 +19,7 @@ function SecondaryContainer() {
                 <MovieList title={"Now Playing"} list={nowplaying} />
                 <MovieList title={"Popular"} list={popular} />
                 <MovieList title={"Upcoming Movies"} list={upcoming} />
-                <MovieList title={"Trending"} list={nowplaying} />
+                <MovieList title={"Top Rated"} list={topRated} />
             </div>
         </div>
     )

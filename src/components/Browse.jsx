@@ -2,13 +2,14 @@ import React from "react"
 
 import MainContainer from "./MainContainer"
 import SecondaryContainer from "./SecondaryContainer"
-import { useNowPlaying, usePopular, useUpComing } from "../hooks/useData"
+import { useNowPlaying, usePopular, useUpComing, useTopRated } from "../hooks/useData"
 
 
 function Browse() {
     useNowPlaying()
     usePopular()
     useUpComing()
+    useTopRated()
 
     return (
         <div className="flex flex-col">

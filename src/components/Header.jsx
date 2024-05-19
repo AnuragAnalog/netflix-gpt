@@ -23,9 +23,8 @@ function Header() {
             <img className="w-38 h-20" src={LOGO_IMG} alt="Netflix Logo" />
             {user && (<div className="flex flex-row items-center gap-4">
                 <img className="w-10 h-10" src={PROFILE_IMG} alt="Netflix Avatar" />
-                <button className="bg-red-400 text-white font-bold items-center rounded-md p-2 cursor-pointer" onClick={handleSignOut}> (Sign Out) </button>
+                <button className="bg-red-400 text-white w-20 h-8 text-xs font-bold items-center rounded-md cursor-pointer" onClick={handleSignOut}> (Sign Out) </button>
             </div>)}
-            {/* <button className="bg-red-500 text-white px-4 py-2 rounded-md">Sign In</button> */}
         </div>
     )
 }
