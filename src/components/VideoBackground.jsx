@@ -8,8 +8,14 @@ function VideoBackground(props) {
     const trailerInfo = useSelector((store) => store.movies?.mainTrailer)
 
     return (
-        <div className="">
-            <iframe src={`https://www.youtube.com/embed/${trailerInfo?.key}?si=Soe45MIv8sy3-cgJ`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <div className="w-screen">
+            <iframe 
+                className="w-screen h-screen aspect-video"
+                src={`https://www.youtube.com/embed/${trailerInfo?.key}?&autoplay=1&mute=1&controls=0&rel=0&showinfo=0&loop=1`}
+                title="YouTube video player"
+                allow="autoplay; loop; encrypted-media; gyroscope; modestbranding"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen />
         </div>
     )
 }
