@@ -20,3 +20,6 @@ export const API_OPTIONS = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTU4ZDFjNDQxZWRmMDNmOWYwYjUzMzYxZTRjY2I5ZCIsInN1YiI6IjY2NDgyZDkxNmFjZWFjZWNiNTJmNjljOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kYK_cDZ1aJibfwtwxROjsRNpenc7DdpKi9xpnT0lBOU'
     }
   };
+
+// Movie Card Image URL
+export const MOVIE_CARD_IMG_URL = "https://occ-0-2433-2430.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABROEnoFId7Qbw_QxHher9TJPWC-tfJuL1_jkWU8c23JePs--cVao9QRYOzxmUkvq74H21p2zNlqmBTUTUu266aRQTFV8az6i9y6TESq_Hxknpf3ugKP6mIfP9M_FEOSth3wn8R-gsP57v6VWZlDgD7V74WxncrIHSqB_Z5jhclFYzFj0lrpJs91o0okMQYLh_q-U_SRuD0Hk-4SeoIMyRuH6gX0a9mC8v_60Ftg8T9aqe98Zc8GaEDtygqKYmE4gRbqeMWJtQjAN-uSxESGPNcAizJhQld6wCUZ3CGvpi9lOHctKMccLZNNL.jpg?r=24a"
