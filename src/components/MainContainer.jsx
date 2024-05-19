@@ -10,10 +10,8 @@ function MainContainer() {
     if (!movies) {
         return <div>Loading...</div>
     }
-    const mainMovie = movies[0]
+    const mainMovie = movies[3]
     const { original_title, overview, id } = mainMovie
-
-    console.log("Main Movie: ", mainMovie)
 
     return (
         <div className="">

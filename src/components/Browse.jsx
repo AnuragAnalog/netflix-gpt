@@ -2,14 +2,16 @@ import React from "react"
 
 import MainContainer from "./MainContainer"
 import SecondaryContainer from "./SecondaryContainer"
-import { useNowPlaying } from "../hooks/useData"
+import { useNowPlaying, usePopular, useUpComing } from "../hooks/useData"
 
 
 function Browse() {
     useNowPlaying()
+    usePopular()
+    useUpComing()
 
     return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col">
             <MainContainer />
             <SecondaryContainer />
             {/*

@@ -7,15 +7,14 @@ function MovieList(props) {
     console.log("Movie List: ", list[0])
 
     return (
-        <div className="">
-            <h1>
-                {title}
-            </h1>
-            <div className="flex flex-row">
-                <MovieCard movie={list[0]} />
-                {/* {list.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} />
-                ))} */}
+        <div className="mx-10">
+            <h1 className="text-white text-2xl font-semibold"> {title} </h1>
+            <div className="flex overflow-x-scroll">
+                <div className="flex py-5 gap-2">
+                    {list.map((movie) => (
+                        <MovieCard key={movie.id} movie={movie} />
+                    ))}
+                </div>
             </div>
         </div>
     )

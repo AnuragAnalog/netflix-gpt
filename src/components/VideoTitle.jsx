@@ -2,11 +2,12 @@ import React from "react"
 
 function VideoTitle(props) {
     const { title, desc } = props
+    const trunc_desc = desc.length > 200 ? desc.substring(0, 200) + "..." : desc
 
     return (
         <div className="flex flex-col absolute w-4/12 text-white h-screen aspect-video bg-gradient-to-r from-black px-16 pt-[15%]">
             <h1 className="p-1 text-4xl"> {title} </h1>
-            <p className="p-3 text-xs"> {desc} </p>
+            <p className="p-3 text-xs"> {trunc_desc} </p>
             <div className="flex flex-row p-2 justify-between">
                 <button className="w-1/2 m-2 py-3 bg-white font-semibold text-black hover:bg-opacity-80 rounded-md cursor-pointer">
                     ▶ Play

@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
-import { addNowPlayingMovies, addMainTrailer } from "../utils/movieSlice"
-import { API_OPTIONS, NOW_PLAYING_URL } from "../utils/constants"
+import { addNowPlayingMovies, addMainTrailer, addPopularMovies, addUpComingMovies } from "../utils/movieSlice"
+import { API_OPTIONS, NOW_PLAYING_URL, POPULAR_URL, UPCOMING_URL } from "../utils/constants"
 
 function useNowPlaying() {
     const dispatch = useDispatch()
@@ -16,6 +16,36 @@ function useNowPlaying() {
 
     useEffect(() => {
         getNowPlaying()
+    }, [])
+}
+
+function usePopular() {
+    const dispatch = useDispatch()
+
+    async function getPopular() {
+        const data = await fetch(POPULAR_URL, API_OPTIONS)
+        const movies = await data.json()
+
+        dispatch(addPopularMovies(movies.results))
+    }
+
+    useEffect(() => {
+        getPopular()
+    }, [])
+}
+
+function useUpComing() {
+    const dispatch = useDispatch()
+
+    async function getUpComing() {
+        const data = await fetch(UPCOMING_URL, API_OPTIONS)
+        const movies = await data.json()
+
+        dispatch(addUpComingMovies(movies.results))
+    }
+
+    useEffect(() => {
+        getUpComing()
     }, [])
 }
 
@@ -38,4 +68,4 @@ function useTrailerVideo(props) {
     }, [])
 }
 
-export { useNowPlaying, useTrailerVideo }
+export { useNowPlaying, useTrailerVideo, usePopular, useUpComing }

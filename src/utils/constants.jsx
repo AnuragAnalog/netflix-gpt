@@ -8,6 +8,9 @@ export const BODY_IMG = "https://assets.nflxext.com/ffe/siteui/vlv3/41c789f0-7df
 
 // Now Playing Movies
 export const NOW_PLAYING_URL = 'https://api.themoviedb.org/3/movie/now_playing?page=1'
+export const POPULAR_URL = "https://api.themoviedb.org/3/movie/popular?page=1"
+export const TOP_RATED_URL = "https://api.themoviedb.org/3/movie/top_rated?page=1"
+export const UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming?page=1"
 
 // Video URL
 export const VIDEO_URL = "https://api.themoviedb.org/3/movie/{movie_id}/videos"
@@ -22,4 +25,4 @@ export const API_OPTIONS = {
   };
 
 // Movie Card Image URL
-export const MOVIE_CARD_IMG_URL = "https://occ-0-2433-2430.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABROEnoFId7Qbw_QxHher9TJPWC-tfJuL1_jkWU8c23JePs--cVao9QRYOzxmUkvq74H21p2zNlqmBTUTUu266aRQTFV8az6i9y6TESq_Hxknpf3ugKP6mIfP9M_FEOSth3wn8R-gsP57v6VWZlDgD7V74WxncrIHSqB_Z5jhclFYzFj0lrpJs91o0okMQYLh_q-U_SRuD0Hk-4SeoIMyRuH6gX0a9mC8v_60Ftg8T9aqe98Zc8GaEDtygqKYmE4gRbqeMWJtQjAN-uSxESGPNcAizJhQld6wCUZ3CGvpi9lOHctKMccLZNNL.jpg?r=24a"
+export const MOVIE_CARD_IMG_URL = "https://image.tmdb.org/t/p/w500"
