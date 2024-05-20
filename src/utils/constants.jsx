@@ -26,3 +26,12 @@ export const API_OPTIONS = {
 
 // Movie Card Image URL
 export const MOVIE_CARD_IMG_URL = "https://image.tmdb.org/t/p/w500"
+
+// Language Mapping
+export const LANG_MAP = [
+  {identifier: "en", name: "English"},
+  {identifier: "es", name: "Spanish"},
+  {identifier: "hi", name: "Hindi"},
+  {identifier: "te", name: "Telugu"},
+  {identifier: "ml", name: "Malayalam"}  
+]
