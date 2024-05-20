@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { update } from "firebase/database";
 
 const movieSlice = createSlice({
     name: "movie",
