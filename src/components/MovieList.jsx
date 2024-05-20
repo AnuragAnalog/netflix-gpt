@@ -4,7 +4,6 @@ import MovieCard from "./MovieCard"
 
 function MovieList(props) {
     const { title, list } = props
-    console.log("Movie List: ", list[0])
 
     return (
         <div className="mx-10">

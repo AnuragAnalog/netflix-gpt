@@ -7,7 +7,7 @@ import GPTMovieSuggestions from "./GPTMovieSuggestions"
 function GPTSearch() {
     return (
         <div className="">
-            <div className="absolute -z-10">
+            <div className="fixed -z-10">
                 <img className="" src={ BODY_IMG } alt="Netflix Body" />
             </div>
 

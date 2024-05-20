@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
 
-import Header from "./Header"
 import { auth } from "../firebase"
 import { BODY_IMG } from "../utils/constants"
 import { checkValidData } from "../utils/validate"
@@ -71,8 +70,7 @@ function LogIn() {
 
     return (
         <div className="">
-            {/* <Header /> */}
-            <img className="absolute" src={ BODY_IMG } alt="Netflix Body" />
+            <img className="fixed" src={ BODY_IMG } alt="Netflix Body" />
             <div className="flex flex-col absolute w-3/12 bg-opacity-75 bg-black my-36 mx-auto right-0 left-0 px-14 py-28 gap-8">
                 <h1 className="text-4xl font-semibold text-white"> {isLogIn ? "Log In" : "Sign Up"} </h1>
                 <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
