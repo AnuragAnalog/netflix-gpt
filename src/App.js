@@ -12,6 +12,7 @@ import LogIn from "./components/LogIn"
 import appStore from "./utils/appStore"
 import { auth } from "./firebase"
 import { addUser, removeUser } from "./utils/userSlice"
+import { updateTrailerIndex } from "./utils/movieSlice"
 
 function App() {
   const dispatch = useDispatch()
@@ -30,6 +31,17 @@ function App() {
     })
 
     return () => unsubscribe()
+  }, [])
+
+  useEffect(() => {
+    // Timer to set the random index from 1 to 20 in movie slice redux store
+
+    const timer = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * 20)
+      dispatch(updateTrailerIndex(randomIndex))
+    }, 300000)
+
+    return () => clearInterval(timer)
   }, [])
 
   return (

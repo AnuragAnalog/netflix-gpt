@@ -15,7 +15,8 @@ This is a web based projecct, which integrates ChatGPT into a Netflix Clone App,
 - [x] Implemeting SignOut
 - [x] Created Redux Store
 - [x] Updated our Profile
-- [ ] Fetch Movies from TMDB
+- [x] Fetch Movies from TMDB
+- [ ] GPT Search Button
 
 ## Layout
 

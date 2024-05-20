@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { update } from "firebase/database";
 
 const movieSlice = createSlice({
     name: "movie",
     initialState: {
+        trailerIndex: null,
         nowPlayingMovies: null,
         popularMovies: null,
         upComingMovies: null,
@@ -10,6 +12,9 @@ const movieSlice = createSlice({
         mainTrailer: null
     },
     reducers: {
+        updateTrailerIndex: (state, action) => {
+            state.trailerIndex = action.payload
+        },
         addNowPlayingMovies: (state, action) => {
             state.nowPlayingMovies = action.payload
         },
@@ -28,6 +33,6 @@ const movieSlice = createSlice({
     }
 })
 
-export const { addNowPlayingMovies, addMainTrailer, addPopularMovies, addUpComingMovies, addTopRatedMovies } = movieSlice.actions
+export const { addNowPlayingMovies, addMainTrailer, addPopularMovies, addUpComingMovies, addTopRatedMovies, updateTrailerIndex } = movieSlice.actions
 
 export default movieSlice.reducer
