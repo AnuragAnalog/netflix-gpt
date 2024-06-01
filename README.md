@@ -35,7 +35,8 @@ The boilerplate code is generated using `create-react-app`. To run the project, 
 - Password: `Password@1234`
 
 ## Live Demo
-![Netflix GPT](https://raw.githubusercontent.com/AnuragAnalog/netflix-gpt/main/demo.gif?token=GHSAT0AAAAAACRHGYEWNKYJZVOIXTL42L2IZS3S7VA)
+
+<img src="https://raw.githubusercontent.com/AnuragAnalog/netflix-gpt/main/demo.gif?token=GHSAT0AAAAAACRHGYEWNKYJZVOIXTL42L2IZS3S7VA" alt="Netflix GPT" width="100%">
 
 - [x] Started the project with Create React App.
 - [x] Installed Tailwind CSS for styling
