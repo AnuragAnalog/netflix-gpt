@@ -44,7 +44,7 @@ function Header() {
                     })}
                 </select>}
 
-                <button className="text-black font-bold text-sm cursor-pointer bg-purple-200 mx-4 my-2" onClick={handleGptSearchClick}>
+                <button className="text-black font-bold text-sm p-2 rounded-lg cursor-pointer bg-purple-100 mx-4 my-2" onClick={handleGptSearchClick}>
                     {gptToggle ? "Homepage" : "GPT Search"}
                 </button>
                 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { addNowPlayingMovies, addMainTrailer, addPopularMovies, addUpComingMovies, addTopRatedMovies } from "../utils/movieSlice"
 import { API_OPTIONS, NOW_PLAYING_URL, POPULAR_URL, UPCOMING_URL, TOP_RATED_URL } from "../utils/constants"
 
-function useNowPlaying() {
+function NowPlaying() {
     const dispatch = useDispatch()
     const nowPlayingMovies = useSelector((store) => store.movie?.nowPlayingMovies)
 
@@ -13,13 +13,16 @@ function useNowPlaying() {
         const movies = await data.json()
 
         dispatch(addNowPlayingMovies(movies.results))
+        return movies.results
     }
 
-    useEffect(() => {
+    // useEffect(() => {
         if (nowPlayingMovies === null) {
-            getNowPlaying()
+            nowPlayingMovies = getNowPlaying()
         }
-    }, [])
+    // }, [])
+
+    return nowPlayingMovies
 }
 
 function usePopular() {
@@ -98,4 +101,4 @@ function useTrailerVideo(props) {
     }, [])
 }
 
-export { useNowPlaying, useTrailerVideo, usePopular, useUpComing, useTopRated }
+export { NowPlaying, useTrailerVideo, usePopular, useUpComing, useTopRated }
