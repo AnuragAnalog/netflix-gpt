@@ -8,7 +8,7 @@ function GPTSearch() {
     return (
         <div className="">
             <div className="fixed -z-10">
-                <img className="" src={ BODY_IMG } alt="Netflix Body" />
+                <img className="h-screen object-cover md:w-screen" src={ BODY_IMG } alt="Netflix Body" />
             </div>
 
             <GPTSearchBar />

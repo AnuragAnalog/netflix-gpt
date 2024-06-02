@@ -35,8 +35,8 @@ function Header() {
     }
 
     return (
-        <div className="flex flex-row items-center justify-between z-10 w-screen absolute px-8 py-2 bg-gradient-to-b from-black">
-            <img className="w-38 h-20" src={ LOGO_IMG } alt="Netflix Logo" onClick={clickLogo} />
+        <div className="flex md:flex-row flex-col items-center justify-between z-10 w-screen absolute px-8 py-2 bg-gradient-to-b from-black">
+            <img className="w-38 h-20 mx-auto md:mx-0" src={ LOGO_IMG } alt="Netflix Logo" onClick={clickLogo} />
             {user && (<div className="flex flex-row items-center gap-4">
                 {gptToggle && <select defaultValue="en" className="bg-black text-white font-bold text-sm cursor-pointer mx-4 my-2" onChange={changeLanguage}>
                     {LANG_MAP.map((lang) => {

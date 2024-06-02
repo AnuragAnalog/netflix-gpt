@@ -42,7 +42,7 @@ function GPTSearchBar() {
     }
 
     return (
-        <div className="w-1/2 m-auto pt-[7.5%]">
+        <div className="w-full md:w-1/2 m-auto pt-[35%] md:pt-[7.5%]">
             <form className="grid grid-cols-12 gap-2" onClick={(e) => e.preventDefault()}>
                 <input ref={searchTextRef} type="text" className="p-4 rounded-lg border border-black col-span-9" placeholder={lang[language].gptSearchPlaceholder} />
                 <button className="text-white bg-red-500 font-extrabold p-2 rounded-lg col-span-3 cursor-pointer" onClick={handleGPTSearch}>
